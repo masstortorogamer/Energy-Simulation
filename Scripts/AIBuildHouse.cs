@@ -7,10 +7,10 @@ public class AIBuildHouse : MonoBehaviour
     public float buildTime = 10f;
 //-------------------------------------Private
     private float waitTime;
-
+    //Provide a new list for the upgrades.
     private List<string> upgrades = new List<string>(){"AutoLights", "SunGenerators"};
     private string selectedUpgrade;
-
+    //This int gets the number of an upgrade.
     private int index;
 
     private bool beginConstruction = false;
@@ -53,11 +53,14 @@ public class AIBuildHouse : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(10);
+            //If the List isn't empty.
             if (upgrades.Count != 0)
             {
+            //Get a random upgrade and assign it to the selectedUpgrade.
                 index = Random.Range(0, upgrades.Count);
                 selectedUpgrade = upgrades[index];
             }
+            //Do things depending on the selected upgrade.
             if (selectedUpgrade == "AutoLights")
             {
            transform.Find("LeftWindowLight").gameObject.SetActive(true);
