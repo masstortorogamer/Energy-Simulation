@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ClickCafe : MonoBehaviour
+public class ClickFactory : MonoBehaviour
 {
-    public GameObject cafePanel;
-    public Button cafeCloseButton;
+    public GameObject factoryPanel;
+    public Button factoryCloseButton;
     public GameObject clickBox;
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,8 @@ public class ClickCafe : MonoBehaviour
             {
                 if (!EventSystem.current.IsPointerOverGameObject() && hit.transform.gameObject == clickBox)
                 {
-                    cafePanel.gameObject.SetActive(true);
-                    cafeCloseButton.gameObject.SetActive(true);
+                    factoryPanel.gameObject.SetActive(true);
+                    factoryCloseButton.gameObject.SetActive(true);
                 }
             }
         }

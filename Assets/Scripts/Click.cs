@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Click : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Click : MonoBehaviour
     public GameObject information;
     public GameObject houseLocation;
     public Button informationButton;
+
+    public static bool startGame = false;
 
     private TextMesh informationText;
     private bool constructed = false;
@@ -32,7 +35,7 @@ public class Click : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 //See if mouse was clicked on something and see if the clicked object is the one defined.
-                if (hit.transform != null && hit.transform.gameObject.name == "ClickBox" && !constructed)
+                if (!EventSystem.current.IsPointerOverGameObject() && hit.transform != null && hit.transform.gameObject.name == "ClickBox" && !constructed)
                 {
                     //If the player clicks on the ClickBox, get that HouseLocation's children and assign their place.
                     clickObject = hit.transform.gameObject;
@@ -65,5 +68,6 @@ public class Click : MonoBehaviour
         yield return new WaitForSeconds(2);
         informationText.text = "";
         AIStart.start = true;
+        startGame = true;
     }
 }

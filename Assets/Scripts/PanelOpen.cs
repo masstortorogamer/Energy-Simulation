@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PanelOpen : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class PanelOpen : MonoBehaviour
     public GameObject upgradesPanel;
     public Button closeCafeButton;
     public GameObject cafePanel;
+    public Button closeFactoryButton;
+    public GameObject factoryPanel;
+    public Button closeShortageButton;
+    public Button doneWithShortageButton;
+    public GameObject shortagePanel;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,4 +57,26 @@ public class PanelOpen : MonoBehaviour
         closeCafeButton.gameObject.SetActive(false);
         cafePanel.gameObject.SetActive(false);
     }
+
+    public void CloseFactoryPanel()
+    {
+        closeFactoryButton.gameObject.SetActive(false);
+        factoryPanel.gameObject.SetActive(false);
+    }
+
+    public void CloseShortagePanel()
+    {
+        if (EventSystem.current.currentSelectedGameObject.name == closeShortageButton.name)
+        {
+            shortagePanel.SetActive(false);
+            EnergyCoins.chosenUpgrades.Clear();
+        }
+        if (EventSystem.current.currentSelectedGameObject.name == doneWithShortageButton.name && EnergyCoins.chosenUpgrades.Count > 0)
+        {
+            shortagePanel.SetActive(false);
+        }
+        
+    }
+
+
 }

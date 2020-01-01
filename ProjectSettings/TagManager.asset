@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HouseSpawn
   - PlayerSpawn
+  - SnowStorm
   layers:
   - Default
   - TransparentFX
