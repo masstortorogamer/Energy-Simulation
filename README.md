@@ -6,4 +6,4 @@ The scripts can be opened via Visual Studio, or any other program that can open 
 
 Update 1.0.1
 
-Added a Snow Storm for the economy, the Player can now only gain Energy Coins(EC for Short) during Snow Storms if they contribute their upgrades for the community, EC increases depending on how many upgrades were selected.
+Added a Snow Storm for the economy, the Player can now only gain Energy Coins(EC for short) during Snow Storms if they contribute their upgrades for the community, EC increases depending on how many upgrades were selected.
