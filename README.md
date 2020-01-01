@@ -7,3 +7,5 @@ The scripts can be opened via Visual Studio, or any other program that can open 
 Update 1.0.1
 
 Added a Snow Storm for the economy, the Player can now only gain Energy Coins(EC for short) during Snow Storms if they contribute their upgrades for the community, EC increases depending on how many upgrades were selected.
+
+The Player can click on the Factory to get a small text of information about what it does, and what can be done to reduce air pollution.
