@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 0.8039216}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4743,6 +4743,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1374966264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2514883214662161042, guid: 1b5af9fa60819b545bf7f4e6240ff8fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2514883214990284748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1374966269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374966264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53c6df797a51e9418340a8976292ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass: {fileID: 2100000, guid: f33de51573d235641a7dda6ae49b8c7b, type: 2}
+  snow: {fileID: 2100000, guid: 29a11bf48cfaec44ea6cca328028c858, type: 2}
+  startSnowify: 1
+--- !u!95 &1374966270
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374966264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 202ed271e4bd7914e938751107826255, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1377149617
 GameObject:
   m_ObjectHideFlags: 0
@@ -6949,6 +6989,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6727763253098051958, guid: 2fb86e7fd773ec046825547dedcf54c5,
+        type: 3}
+      propertyPath: m_CharacterSize
+      value: 8.69
+      objectReference: {fileID: 0}
     - target: {fileID: 6727763253926559602, guid: 2fb86e7fd773ec046825547dedcf54c5,
         type: 3}
       propertyPath: m_Name

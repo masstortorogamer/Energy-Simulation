@@ -25,7 +25,7 @@ public class EnergyCoins : MonoBehaviour
     private Text energyCoinsInformation;
 
     private bool warning = false;
-    private bool snowStormOnGoing = false;
+    public static bool snowStormOnGoing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +67,7 @@ public class EnergyCoins : MonoBehaviour
         {
             Instantiate(snowStorm, snowStormLocation.transform.position, snowStormLocation.transform.rotation);
             snowStormOnGoing = true;
+            shortageInfoPanel.SetActive(false);
         }
         //Give the Player Energy Coins for providing Energy during Snow Storm.
         if (stormTime > 0f && snowStormOnGoing == true)
