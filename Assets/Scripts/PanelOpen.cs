@@ -11,13 +11,12 @@ public class PanelOpen : MonoBehaviour
     public GameObject overviewPanel;
     public Button upgradesButton;
     public GameObject upgradesPanel;
-    public Button closeCafeButton;
     public GameObject cafePanel;
-    public Button closeFactoryButton;
     public GameObject factoryPanel;
     public Button closeShortageButton;
     public Button doneWithShortageButton;
     public GameObject shortagePanel;
+    public GameObject atomEnergyUtilitiesInfoPanel;
     
     // Start is called before the first frame update
     void Start()
@@ -54,13 +53,11 @@ public class PanelOpen : MonoBehaviour
 
     public void CloseCafePanel()
     {
-        closeCafeButton.gameObject.SetActive(false);
         cafePanel.gameObject.SetActive(false);
     }
 
     public void CloseFactoryPanel()
     {
-        closeFactoryButton.gameObject.SetActive(false);
         factoryPanel.gameObject.SetActive(false);
     }
 
@@ -76,6 +73,11 @@ public class PanelOpen : MonoBehaviour
             shortagePanel.SetActive(false);
         }
         
+    }
+
+    public void CloseAtomUtilitiesPanel()
+    {
+        atomEnergyUtilitiesInfoPanel.SetActive(false);
     }
 
 
