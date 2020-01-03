@@ -14,3 +14,10 @@ Update 1.0.2
 
 The Ground now gets covered in snow when the Snow Storm happens.
 Took me a while to get it done due to trying different techniques.
+
+Update 1.0.3
+
+Added an Electric Utility Building into the game, currently it only provides general information about what it does when clicked on.
+Day Cycle has been added, you'll be able to see the shadows of buildings and the ever changing cycle visually.
+Trees and Bushes were added, to make the world a bit more lively. (Free Asset)
+Added a space between the text at the end of the period for The Factory Information.
