@@ -13,6 +13,7 @@ The Player can click on the Factory to get a small text of information about wha
 Update 1.0.2
 
 The Ground now gets covered in snow when the Snow Storm happens.
+
 Took me a while to get it done due to trying different techniques.
 
 Update 1.0.3
