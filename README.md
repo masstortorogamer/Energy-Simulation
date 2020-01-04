@@ -28,4 +28,4 @@ Added a space between the text at the end of the period for The Factory Informat
 
 Update 1.0.3.1
 
-Made sure the UI scales with the screen size to avoid unconvenient UI size/position.
+Made sure the UI scales with the screen size to avoid inconvenient UI size/position.
