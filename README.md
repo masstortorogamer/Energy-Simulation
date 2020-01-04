@@ -25,3 +25,7 @@ Day Cycle has been added, you'll be able to see the shadows of buildings and the
 Trees and Bushes were added, to make the world a bit more lively. (Free Asset)
 
 Added a space between the text at the end of the period for The Factory Information.
+
+Update 1.0.3.1
+
+Made sure the UI scales with the screen size to avoid unconvenient UI size/position.
