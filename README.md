@@ -29,3 +29,7 @@ Added a space between the text at the end of the period for The Factory Informat
 Update 1.0.3.1
 
 Made sure the UI scales with the screen size to avoid inconvenient UI size/position.
+
+Update 1.0.3.2
+
+By clicking on the Atom Energy Utilities Building, you can see the total amount of Energy Coins that was distributed to the community.
