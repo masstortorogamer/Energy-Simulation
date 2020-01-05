@@ -9,10 +9,14 @@ public class EnergyCoins : MonoBehaviour
     public GameObject energyCoinsText;
     public static float savedPower;
     public GameObject shortageInfoPanel;
+    public Text totalECCount;
     public float timeBeforeStorm = 25f;
     public float originalStormTime = 20f;
     public float stormTime;
     public float warningTime;
+
+    public static float totalECGained = 0f;
+    public static float playerECGain = 0f;
 
     public GameObject snowStormLocation;
     public GameObject snowStorm;
@@ -39,7 +43,8 @@ public class EnergyCoins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        totalECCount.text = "" + Mathf.RoundToInt(totalECGained);
+        Debug.Log(AIBuildHouse.ecGain + playerECGain);
         if (timeBeforeStorm > 0f && Click.startGame == true)
         {
             timeBeforeStorm -= 1f * Time.deltaTime;
@@ -76,6 +81,7 @@ public class EnergyCoins : MonoBehaviour
             energyCoins += 0.2f * Upgrades.appliedUpgrades.Count * Time.deltaTime;
             energyCoinsInformation.text = "Energy Coins: " + Mathf.Round(energyCoins);
             Debug.Log("Currently increasing EC by: " + 0.2f * Upgrades.appliedUpgrades.Count);
+            totalECGained += AIBuildHouse.ecGain * Time.deltaTime + playerECGain * Time.deltaTime;
         }
         if (stormTime <= 0)
         //Set values back to their original value.

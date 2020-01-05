@@ -35,6 +35,7 @@ public class Upgrades : MonoBehaviour
         myHouse.transform.Find("RightWindowLight").gameObject.SetActive(true);
         FactoryScript.cleanliness += 3.3f;
         readyToUseUpgrades.Add("Auto Lights");
+        EnergyCoins.playerECGain += 0.3f;
     }
 
     public void DestroySunGenerators()
@@ -45,6 +46,7 @@ public class Upgrades : MonoBehaviour
         myHouse.transform.Find("GeneratorLeft").gameObject.SetActive(true);
         FactoryScript.cleanliness += 3.3f;
         readyToUseUpgrades.Add("Sun Generators");
+        EnergyCoins.playerECGain += 0.3f;
     }
 
         public void SelectUpgrades()

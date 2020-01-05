@@ -11,7 +11,11 @@ public class AIBuildHouse : MonoBehaviour
     private List<string> upgrades = new List<string>(){"AutoLights", "SunGenerators"};
     private string selectedUpgrade;
 
+    public static float ecGain = 0f;
+
     private int index;
+    private int gainLimit;
+    private float maxECPerHouse;
 
     private bool beginConstruction = false;
     private bool constructed = false;
@@ -19,12 +23,15 @@ public class AIBuildHouse : MonoBehaviour
     void Start()
     {
         waitTime = Random.Range(1f,10f);
-        
+        gainLimit = upgrades.Count + GameObject.FindGameObjectsWithTag("HouseSpawn").Length - 1;
+        maxECPerHouse = 0.3f * upgrades.Count;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (!beginConstruction)
         {
             StartCoroutine("Build");
@@ -60,10 +67,16 @@ public class AIBuildHouse : MonoBehaviour
             }
             if (selectedUpgrade == "AutoLights")
             {
-           transform.Find("LeftWindowLight").gameObject.SetActive(true);
-           transform.Find("RightWindowLight").gameObject.SetActive(true);
-           upgrades.Remove(selectedUpgrade);
-           FactoryScript.cleanliness += 3.3f;
+                transform.Find("LeftWindowLight").gameObject.SetActive(true);
+                transform.Find("RightWindowLight").gameObject.SetActive(true);
+                upgrades.Remove(selectedUpgrade);
+                FactoryScript.cleanliness += 3.3f;
+                if (ecGain < maxECPerHouse * gainLimit)
+                {
+                    ecGain += 0.3f;
+                    yield return null;
+                }
+                
 
             yield return null;
             }
@@ -73,6 +86,11 @@ public class AIBuildHouse : MonoBehaviour
                 transform.Find("GeneratorRight").gameObject.SetActive(true);
                 upgrades.Remove(selectedUpgrade);
                 FactoryScript.cleanliness += 3.3f;
+                if (ecGain < maxECPerHouse * gainLimit)
+                {
+                    ecGain += 0.3f;
+                    yield return null;
+                }
                 yield return null;
             }
             
