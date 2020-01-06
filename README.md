@@ -38,6 +38,6 @@ Update 1.0.3.3
 
 By clicking on the Factory, you can see the amount of Pollution the factory causes by percentage, it can be decreased by applying upgrades to your home, the AI will also contribute to this.
 
-However, the pollution cannot go below 10% since it still has to send power to things that are not houses.
+However, the pollution cannot go below 10% since it still has to send power to things other than your house.
 
 Also renamed the Cleanliness value inside FactoryScript to Pollution to better represent itself.
