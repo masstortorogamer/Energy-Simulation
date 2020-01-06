@@ -68,8 +68,11 @@ public class AIBuildHouse : MonoBehaviour
                 transform.Find("RightWindowLight").gameObject.SetActive(true);
                 upgrades.Remove(selectedUpgrade);
                 selectedUpgrade = "";
-                FactoryScript.pollution -= math;
                 ecGain += 0.3f;
+                if (FactoryScript.pollution > 10f)
+                {
+                    FactoryScript.pollution -= math;
+                }
 
                 
 
@@ -83,6 +86,10 @@ public class AIBuildHouse : MonoBehaviour
                 selectedUpgrade = "";
                 FactoryScript.pollution -= math;
                 ecGain += 0.3f;
+                    if (FactoryScript.pollution > 10f)
+                    {
+                    FactoryScript.pollution -= math;
+                    }
             }
             
             yield return null;

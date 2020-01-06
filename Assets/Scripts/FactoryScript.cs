@@ -47,13 +47,9 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (pollution == 0)
+        if (pollution < 10)
         {
-            foreach (GameObject particles in smokes)
-            {
-               var main = particles.GetComponentInChildren<ParticleSystem>().main;
-               main.startColor = new Color(82 / 255f , 82 / 255f , 82 / 255f , 10 / 255f);
-            }
+            pollution == 10;
         }
     }
 }
