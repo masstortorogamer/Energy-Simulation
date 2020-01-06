@@ -19,7 +19,7 @@ public class FactoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        percentage.GetComponent<Text>().text = "%" + Mathf.RoundToInt(pollution);
+        percentage.GetComponent<Text>().text = "" + Mathf.RoundToInt(pollution) + "%";
         if (pollution >= 50f && pollution < 75)
         {
             foreach (GameObject particles in smokes)
