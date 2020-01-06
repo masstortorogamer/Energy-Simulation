@@ -33,3 +33,11 @@ Made sure the UI scales with the screen size to avoid inconvenient UI size/posit
 Update 1.0.3.2
 
 By clicking on the Atom Energy Utilities Building, you can see the total amount of Energy Coins that was distributed to the community.
+
+Update 1.0.3.3
+
+By clicking on the Factory, you can see the amount of Pollution the factory causes by percentage, it can be decreased by applying upgrades to your home, the AI will also contribute to this.
+
+However, the pollution cannot go below 10% since it still has to send power to things other than your house.
+
+Also renamed the Cleanliness value inside FactoryScript to Pollution to better represent itself.
