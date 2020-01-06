@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FactoryScript : MonoBehaviour
 {
-    public static float cleanliness = 0f;
+    public static float pollution = 100f;
     public GameObject[] smokes;
+
+    public GameObject percentage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +19,8 @@ public class FactoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cleanliness >= 25f && cleanliness < 50)
+        percentage.GetComponent<Text>().text = "%" + Mathf.RoundToInt(pollution);
+        if (pollution >= 50f && pollution < 75)
         {
             foreach (GameObject particles in smokes)
             {
@@ -24,7 +29,7 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (cleanliness >= 50f && cleanliness < 75)
+        if (pollution >= 25f && pollution < 50)
         {
             foreach (GameObject particles in smokes)
             {
@@ -33,7 +38,7 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (cleanliness >= 75f && cleanliness < 100)
+        if (pollution >= 0f && pollution < 25)
         {
             foreach (GameObject particles in smokes)
             {
@@ -42,7 +47,7 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (cleanliness == 100)
+        if (pollution == 0)
         {
             foreach (GameObject particles in smokes)
             {

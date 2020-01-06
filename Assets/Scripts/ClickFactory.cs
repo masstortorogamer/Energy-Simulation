@@ -27,7 +27,6 @@ public class ClickFactory : MonoBehaviour
                 if (!EventSystem.current.IsPointerOverGameObject() && hit.transform.gameObject == clickBox)
                 {
                     factoryPanel.gameObject.SetActive(true);
-                    factoryCloseButton.gameObject.SetActive(true);
                 }
             }
         }
