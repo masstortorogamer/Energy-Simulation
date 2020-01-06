@@ -20,7 +20,7 @@ public class FactoryScript : MonoBehaviour
     void Update()
     {
         percentage.GetComponent<Text>().text = "" + Mathf.RoundToInt(pollution) + "%";
-        if (pollution >= 50f && pollution < 75)
+        if (pollution >= 50f && pollution < 75f)
         {
             foreach (GameObject particles in smokes)
             {
@@ -29,7 +29,7 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (pollution >= 25f && pollution < 50)
+        if (pollution >= 25f && pollution < 50f)
         {
             foreach (GameObject particles in smokes)
             {
@@ -38,7 +38,7 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (pollution >= 0f && pollution < 25)
+        if (pollution >= 0f && pollution < 25f)
         {
             foreach (GameObject particles in smokes)
             {
@@ -47,9 +47,9 @@ public class FactoryScript : MonoBehaviour
             }
         }
 
-        if (pollution < 10)
+        if (pollution < 10f)
         {
-            pollution == 10;
+            pollution = 10;
         }
     }
 }
