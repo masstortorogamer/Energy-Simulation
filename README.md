@@ -41,3 +41,7 @@ By clicking on the Factory, you can see the amount of Pollution the factory caus
 However, the pollution cannot go below 10% since it still has to send power to things other than your house.
 
 Also renamed the Cleanliness value inside FactoryScript to Pollution to better represent itself.
+
+Update 1.0.3.4
+
+Now when the Player first starts the game, the game will ask the Player if they wish to build their house when they click on an empty spot.
