@@ -17,6 +17,9 @@ public class PanelOpen : MonoBehaviour
     public Button doneWithShortageButton;
     public GameObject shortagePanel;
     public GameObject atomEnergyUtilitiesInfoPanel;
+    public Button approveButton;
+    public Button noApproveButton;
+    public GameObject approveHousePanel;
     
     // Start is called before the first frame update
     void Start()
@@ -78,6 +81,20 @@ public class PanelOpen : MonoBehaviour
     public void CloseAtomUtilitiesPanel()
     {
         atomEnergyUtilitiesInfoPanel.SetActive(false);
+    }
+
+    public void CloseApproveHousePanel()
+    {  
+        if(EventSystem.current.currentSelectedGameObject.name == approveButton.name)
+        {
+            Click.approved = true;
+            approveHousePanel.SetActive(false);
+        }
+        if(EventSystem.current.currentSelectedGameObject.name == noApproveButton.name)
+        {
+            approveHousePanel.SetActive(false);
+        }
+        
     }
 
 

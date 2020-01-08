@@ -49,7 +49,7 @@ public class FactoryScript : MonoBehaviour
 
         if (pollution < 10f)
         {
-            pollution = 10;
+            pollution = 10f;
         }
     }
 }

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 9140739336317963090}
   - component: {fileID: 9140739336317963091}
   m_Layer: 0
-  m_Name: ClickBox
+  m_Name: HouseClickBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
