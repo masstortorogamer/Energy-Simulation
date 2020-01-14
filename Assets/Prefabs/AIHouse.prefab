@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167278017595018760}
   - component: {fileID: 1783361618184204256}
+  - component: {fileID: -1204871680383321617}
   m_Layer: 0
   m_Name: AIHouse
   m_TagString: Untagged
@@ -55,6 +56,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTime: 10
+--- !u!114 &-1204871680383321617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388000249900547945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07063ed93ee2d4946a25ea0418af4831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUsage: 1
 --- !u!1 &1777214040883412436
 GameObject:
   m_ObjectHideFlags: 0
