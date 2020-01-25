@@ -13,6 +13,6 @@ public class DayCycle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Rotate(1 * Time.deltaTime,0,0);
+        //this.gameObject.transform.Rotate(1 * Time.deltaTime,0,0);
     }
 }

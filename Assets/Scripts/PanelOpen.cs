@@ -20,6 +20,8 @@ public class PanelOpen : MonoBehaviour
     public Button approveButton;
     public Button noApproveButton;
     public GameObject approveHousePanel;
+    public Button closeWindPanel;
+    public GameObject windPanel;
     
     // Start is called before the first frame update
     void Start()
@@ -64,20 +66,6 @@ public class PanelOpen : MonoBehaviour
         factoryPanel.gameObject.SetActive(false);
     }
 
-    public void CloseShortagePanel()
-    {
-        if (EventSystem.current.currentSelectedGameObject.name == closeShortageButton.name)
-        {
-            shortagePanel.SetActive(false);
-            EnergyCoins.chosenUpgrades.Clear();
-        }
-        if (EventSystem.current.currentSelectedGameObject.name == doneWithShortageButton.name && EnergyCoins.chosenUpgrades.Count > 0)
-        {
-            shortagePanel.SetActive(false);
-        }
-        
-    }
-
     public void CloseAtomUtilitiesPanel()
     {
         atomEnergyUtilitiesInfoPanel.SetActive(false);
@@ -97,5 +85,16 @@ public class PanelOpen : MonoBehaviour
         
     }
 
+    public void OpenGraphPanel()
+    {
+        if (GameObject.Find("MyHouse"))
+        {
+            GameObject.Find("MyHouse").transform.Find("BarGraph").gameObject.SetActive(true);
+        }
+    }
 
+    public void CloseWindPanel()
+    {
+        windPanel.gameObject.SetActive(false);
+    }
 }

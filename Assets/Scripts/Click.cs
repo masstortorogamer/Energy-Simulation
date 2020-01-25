@@ -13,6 +13,7 @@ public class Click : MonoBehaviour
     public GameObject houseLocation;
     public GameObject clickBox;
     public Button informationButton;
+    public Button openGraphButton;
     public GameObject approvePanel;
     public GameObject houseClickBox;
 
@@ -72,6 +73,7 @@ public class Click : MonoBehaviour
         yield return new WaitForSeconds(10);
         informationText.text = "Building Complete!";
         informationButton.gameObject.SetActive(true);
+        openGraphButton.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         informationText.text = "";
         AIStart.start = true;

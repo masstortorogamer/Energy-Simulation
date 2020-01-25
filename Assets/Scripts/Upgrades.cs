@@ -36,8 +36,6 @@ public class Upgrades : MonoBehaviour
         myHouse.transform.Find("LeftWindowLight").gameObject.SetActive(true);
         myHouse.transform.Find("RightWindowLight").gameObject.SetActive(true);
         FactoryScript.pollution -= math;
-        readyToUseUpgrades.Add("Auto Lights");
-        EnergyCoins.playerECGain += 0.3f;
     }
 
     public void DestroySunGenerators()
@@ -47,36 +45,5 @@ public class Upgrades : MonoBehaviour
         myHouse.transform.Find("GeneratorRight").gameObject.SetActive(true);
         myHouse.transform.Find("GeneratorLeft").gameObject.SetActive(true);
         FactoryScript.pollution -= math;
-        readyToUseUpgrades.Add("Sun Generators");
-        EnergyCoins.playerECGain += 0.3f;
     }
-
-        public void SelectUpgrades()
-    {
-        if (EventSystem.current.currentSelectedGameObject.name == autoLightsSelect.name && readyToUseUpgrades.Contains("Auto Lights"))
-        {
-            autoLightsSelect.gameObject.SetActive(true);
-            EnergyCoins.chosenUpgrades.Add("Auto Lights");
-            autoLightsSelect.interactable = false;
-
-        }
-        if (EventSystem.current.currentSelectedGameObject.name == sunGeneratorsSelect.name && readyToUseUpgrades.Contains("Sun Generators"))
-        {
-            sunGeneratorsSelect.gameObject.SetActive(true);
-            EnergyCoins.chosenUpgrades.Add("Sun Generators");
-            sunGeneratorsSelect.interactable = false;
-        }
-    }
-
-        public void ApplyUpgrades()
-        {
-            if (EnergyCoins.chosenUpgrades.Count > 0)
-            {
-                appliedUpgrades = new List<string>(EnergyCoins.chosenUpgrades);
-                EnergyCoins.chosenUpgrades.Clear();
-                autoLightsSelect.interactable = true;
-                sunGeneratorsSelect.interactable = true;
-                
-            }
-        }
 }

@@ -5,94 +5,52 @@ using UnityEngine.UI;
 
 public class EnergyCoins : MonoBehaviour
 {
-    public static float energyCoins = 0f;
-    public GameObject energyCoinsText;
-    public static float savedPower;
-    public GameObject shortageInfoPanel;
+    public static float rewardCoins = 0f;
     public Text totalECCount;
-    public float timeBeforeStorm = 25f;
-    public float originalStormTime = 20f;
-    public float stormTime;
-    public float warningTime;
+    public Text totalPlayerECGainedText;
+    public Text rewardCoinsText;
 
     public static float totalECGained = 0f;
-    public static float playerECGain = 0f;
 
-    public GameObject snowStormLocation;
-    public GameObject snowStorm;
+    private float totalPlayerECGained;
+
+    private Text rewardCoinsInformation;
     
-    public Button autoLightsSelect;
-    public Button sunGeneratorsSelect;
-
-    public static List<string> chosenUpgrades = new List<string>();
-
-    private Text energyCoinsInformation;
-
-    private bool warning = false;
-    public static bool snowStormOnGoing = false;
     // Start is called before the first frame update
     void Start()
     {
-        energyCoinsInformation = energyCoinsText.GetComponent<Text>();
-        //Warning time will always be timeBeforeStorm's half.
-        warningTime = timeBeforeStorm / 2;
-        //Keep the value of Storm Time to call it back at the end.
-        stormTime = originalStormTime;
+        StartCoroutine("Gain");
     }
 
     // Update is called once per frame
     void Update()
     {
-        totalECCount.text = "" + Mathf.RoundToInt(totalECGained);
-        Debug.Log(AIBuildHouse.ecGain + playerECGain);
-        if (timeBeforeStorm > 0f && Click.startGame == true)
-        {
-            timeBeforeStorm -= 1f * Time.deltaTime;
-            //Make the upgrades appear if the Player owns them.
-            if (Upgrades.readyToUseUpgrades.Contains("Auto Lights"))
-            {
-                autoLightsSelect.gameObject.SetActive(true);
-            }
-            if (Upgrades.readyToUseUpgrades.Contains("Sun Generators"))
-            {
-                sunGeneratorsSelect.gameObject.SetActive(true);
-            }
-            //Show the warning panel and set the bool to true.
-            if (timeBeforeStorm <= warningTime && timeBeforeStorm > 0 && warning == false)
-            {
+        Debug.Log(rewardCoins);
+        totalECCount.text = "" + totalECGained.ToString("0");
+        totalPlayerECGainedText.text = "Total Coins Earned: " + totalPlayerECGained.ToString("0");
+        rewardCoinsText.text = "Reward Coins: " + rewardCoins.ToString("0");
+    }
 
-            shortageInfoPanel.SetActive(true);
-            warning = true;
-
+    IEnumerator Gain()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(PassTime.waitTime);
+            if (WindMillEnergy.gain < 1f && GameObject.Find("MyHouse/GeneratorRight")) 
+            {
+                rewardCoins += WindMillEnergy.gain + 0.10f; 
+                totalPlayerECGained += WindMillEnergy.gain + 0.10f;
             }
-        }
-        
-        //Create the Snow Storm.
-        if (timeBeforeStorm <= 0 && snowStormOnGoing == false)
-        {
-            Instantiate(snowStorm, snowStormLocation.transform.position, snowStormLocation.transform.rotation);
-            snowStormOnGoing = true;
-            shortageInfoPanel.SetActive(false);
-        }
-        //Give the Player Energy Coins for providing Energy during Snow Storm.
-        if (stormTime > 0f && snowStormOnGoing == true)
-        {
-            stormTime -= 1f * Time.deltaTime;
-            energyCoins += 0.2f * Upgrades.appliedUpgrades.Count * Time.deltaTime;
-            energyCoinsInformation.text = "Energy Coins: " + Mathf.Round(energyCoins);
-            Debug.Log("Currently increasing EC by: " + 0.2f * Upgrades.appliedUpgrades.Count);
-            totalECGained += AIBuildHouse.ecGain * Time.deltaTime + playerECGain * Time.deltaTime;
-        }
-        if (stormTime <= 0)
-        //Set values back to their original value.
-        {
-            timeBeforeStorm = warningTime * 2;
-            warning = false;
-            GameObject spawnedSnowStorm = GameObject.FindWithTag("SnowStorm");
-            Destroy(spawnedSnowStorm);
-            snowStormOnGoing = false;
-            stormTime = originalStormTime;
-            Upgrades.appliedUpgrades.Clear();
+            if (WindMillEnergy.gain < 1f)
+            {
+                rewardCoins += WindMillEnergy.gain;
+                totalPlayerECGained += WindMillEnergy.gain;
+            } 
+            else
+            {
+                rewardCoins += WindMillEnergy.gain;
+                totalPlayerECGained += WindMillEnergy.gain;
+            }
         }
     }
 }

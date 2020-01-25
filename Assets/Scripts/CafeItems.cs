@@ -8,7 +8,7 @@ public class CafeItems : MonoBehaviour
     public Button buyCoffeeButton;
     public GameObject showCurrentEC;
 
-    public static float energyCoins;
+    public static float rewardCoins;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +18,16 @@ public class CafeItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        energyCoins = EnergyCoins.energyCoins;
-        showCurrentEC.GetComponent<Text>().text = "Energy Coins: " + Mathf.RoundToInt(energyCoins);
+        rewardCoins = EnergyCoins.rewardCoins;
+        showCurrentEC.GetComponent<Text>().text = "Reward Coins: " + Mathf.RoundToInt(rewardCoins);
     }
 
     public void BuyCoffee()
     {
-        if (energyCoins >= 10f)
+        if (rewardCoins >= 10f)
         {
             Debug.Log("You have purchased: Coffee");
-            EnergyCoins.energyCoins -= 10f;
+            EnergyCoins.rewardCoins -= 10f;
         }
     }
 }
