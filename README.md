@@ -45,3 +45,19 @@ Also renamed the Cleanliness value inside FactoryScript to Pollution to better r
 Update 1.0.3.4
 
 Now when the Player first starts the game, the game will ask the Player if they wish to build their house when they click on an empty spot.
+
+Update 1.0.4
+
+Addead a Windmill Farm that allows the Player to purchase Green Energy for their home. (Currently affects all other houses)
+
+An Energy Graph was added to the game, this will show Player's or AI's power consumption for the day.
+
+The Energy Graph will change every hour, every hour is a second in game.
+
+It will reset at Midnight(24).
+
+Sun Generators will provide 10% Green Energy during Day time. Between 6 and 18.
+
+Energy Coins changed to Reward Coins, and Total amount of earned coins can be seen in Overview.
+
+Removed the Timed weather alarm and took out Snowstorm for now.
