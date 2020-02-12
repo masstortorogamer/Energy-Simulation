@@ -20,6 +20,15 @@ public class FactoryScript : MonoBehaviour
     void Update()
     {
         percentage.GetComponent<Text>().text = "" + Mathf.RoundToInt(pollution) + "%";
+        if (pollution >= 100f)
+        {
+            foreach (GameObject particles in smokes)
+            {
+               var main = particles.GetComponentInChildren<ParticleSystem>().main;
+               main.startColor = new Color(82 / 255f , 82 / 255f , 82 / 255f , 255 / 255f);
+            }
+        } 
+
         if (pollution >= 50f && pollution < 75f)
         {
             foreach (GameObject particles in smokes)

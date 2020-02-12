@@ -39,7 +39,6 @@ public class PassTime : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             if (time == 11 || time == 17 || time == 23 || time == 5)
             {
-                sun.transform.Rotate(90,0,0, Space.World);
             }
             time += 1;  
             passTime = true;

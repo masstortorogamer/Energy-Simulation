@@ -53,12 +53,12 @@ public class Live : MonoBehaviour
             if (transform.Find("GeneratorRight").gameObject.active && transform.Find("GeneratorLeft").gameObject.active && PassTime.time > 8 && PassTime.time < 18)
             {
              transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time).GetComponent<RectTransform>().localScale = new Vector3(0.1838f, powerUsage, 0);
-             transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(WindMillEnergy.percentage + 0.10f, 0f, powerUsage), 1);
+             transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(powerUsage * (WindMillEnergy.percentage + 0.10f), 0f, powerUsage), 1);
             }
             else
             {
                 transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time).GetComponent<RectTransform>().localScale = new Vector3(0.1838f, powerUsage, 0);
-                transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(WindMillEnergy.percentage, 0f, powerUsage), 1);
+                transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(powerUsage * WindMillEnergy.percentage, 0f, powerUsage), 1);
             }
 
             
@@ -77,7 +77,7 @@ public class Live : MonoBehaviour
                     
                 }
                 transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time).GetComponent<RectTransform>().localScale = new Vector3(0.1838f, powerUsage, 0);
-                transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(WindMillEnergy.percentage, 0f, powerUsage), 1);
+                transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(powerUsage * WindMillEnergy.percentage, 0f, powerUsage), 1);
                 if (transform.Find("GeneratorRight").gameObject.active && transform.Find("GeneratorLeft").gameObject.active)
                 {
                 foreach (GameObject gbars in greenBars)
@@ -85,7 +85,7 @@ public class Live : MonoBehaviour
                      gbars.gameObject.SetActive(true);
                  }
                  transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time).GetComponent<RectTransform>().localScale = new Vector3(0.1838f, powerUsage, 0);
-                 transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(WindMillEnergy.percentage, 0f, powerUsage), 1);
+                 transform.Find("BarGraph/GraphPanel/Bars/B" + PassTime.time + "G").GetComponent<RectTransform>().localScale = new Vector3(0.1838f, Mathf.Clamp(powerUsage * WindMillEnergy.percentage, 0f, powerUsage), 1);
             }
     }
 }

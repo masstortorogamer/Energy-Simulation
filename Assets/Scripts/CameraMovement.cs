@@ -47,5 +47,15 @@ public class CameraMovement : MonoBehaviour
                 transform.Translate(Vector3.right * fastMoveSpeed * Time.deltaTime);
             }
         }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            transform.GetComponent<Camera>().orthographicSize--;
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            transform.GetComponent<Camera>().orthographicSize++;
+        }
     }
 }

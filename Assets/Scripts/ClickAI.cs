@@ -20,15 +20,15 @@ public class ClickAI : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if(!EventSystem.current.IsPointerOverGameObject() && hit.transform.name == "AIHouse")
+                if(!EventSystem.current.IsPointerOverGameObject() && hit.transform.parent.name == "AIHouse")
                 {
                     if (GameObject.Find("BarGraph"))
                     {
                         GameObject.Find("BarGraph").gameObject.SetActive(false);
-                        hit.transform.Find("BarGraph").gameObject.SetActive(true);
+                        hit.transform.parent.Find("BarGraph").gameObject.SetActive(true);
                     }
                     else
-                    hit.transform.Find("BarGraph").gameObject.SetActive(true);
+                    hit.transform.parent.Find("BarGraph").gameObject.SetActive(true);
                 }
             }
         }

@@ -36,21 +36,25 @@ public class EnergyCoins : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(PassTime.waitTime);
-            if (WindMillEnergy.gain < 1f && GameObject.Find("MyHouse/GeneratorRight")) 
+            if (WindMillEnergy.gain <= 1f && GameObject.Find("MyHouse/GeneratorRight")) 
             {
-                rewardCoins += WindMillEnergy.gain + 0.10f; 
-                totalPlayerECGained += WindMillEnergy.gain + 0.10f;
+                if (PassTime.time > 8 && PassTime.time < 18)
+                {
+                    rewardCoins += WindMillEnergy.gain + 0.10f; 
+                    totalPlayerECGained += WindMillEnergy.gain + 0.10f;
+                }
+                else
+                {
+                    rewardCoins += WindMillEnergy.gain; 
+                    totalPlayerECGained += WindMillEnergy.gain; 
+                }
+                
             }
-            if (WindMillEnergy.gain < 1f)
+            if (WindMillEnergy.gain <= 1f)
             {
                 rewardCoins += WindMillEnergy.gain;
                 totalPlayerECGained += WindMillEnergy.gain;
             } 
-            else
-            {
-                rewardCoins += WindMillEnergy.gain;
-                totalPlayerECGained += WindMillEnergy.gain;
-            }
         }
     }
 }
