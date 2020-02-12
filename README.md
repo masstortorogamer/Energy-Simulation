@@ -1,8 +1,10 @@
 # Energy-Simulation
 
-You can open the Project by downloading the files, and putting them into a single folder, then opening the Project using Unity, Add Project(or just Add) option.
+**The simulation has been released, and can be accessed by downloading it from**
 
-The scripts can be opened via Visual Studio, or any other program that can open C#.
+# https://masstortorogamer.itch.io/green-energy-simulation
+
+## Password: genergy100
 
 ## Update 1.0.1
 
