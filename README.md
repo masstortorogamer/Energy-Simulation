@@ -1,4 +1,4 @@
-# Teidor
+# Energy-Simulation
 
 You can open the Project by downloading the files, and putting them into a single folder, then opening the Project using Unity, Add Project(or just Add) option.
 
@@ -61,3 +61,23 @@ Sun Generators will provide 10% Green Energy during Day time. Between 6 and 18.
 Energy Coins changed to Reward Coins, and Total amount of earned coins can be seen in Overview.
 
 Removed the Timed weather alarm and took out Snowstorm for now.
+
+Update 2.0.0
+
+THE GAME IS NOW IN ISOMETRIC PERSPECTIVE.
+
+Improved/Changed the graphics to look like Isometric.
+
+Reduced the amount of houses and removed their building point.
+
+The Player now controls the Red House.
+
+Other houses near the Red House can be clicked on to show their Energy Consumption Graph.
+
+Improved panels and added images to represent some buttons.
+
+Reduced the amount of houses, and removed their building spots.
+
+Added a lot more environmental decorations for the game.
+
+Purchasing energy from the windmill farm will only affect the Player, AI will purchase their own energy.
