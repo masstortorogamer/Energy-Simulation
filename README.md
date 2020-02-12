@@ -66,7 +66,7 @@ Removed the Timed weather alarm and took out Snowstorm for now.
 
 ## Update 2.0.0
 
-THE GAME IS NOW IN ISOMETRIC PERSPECTIVE.
+**THE GAME IS NOW IN ISOMETRIC PERSPECTIVE.**
 
 Improved/Changed the graphics to look like Isometric.
 
