@@ -86,3 +86,11 @@ Reduced the amount of houses, and removed their building spots.
 Added a lot more environmental decorations for the game.
 
 Purchasing energy from the windmill farm will only affect the Player, AI will purchase their own energy.
+
+TO-DO
+
+Provide a Tutorial.
+
+Make it clear of what you're clicking on.
+
+Make the environment more lively (Add Birds.)
