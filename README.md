@@ -1,6 +1,7 @@
 # Energy-Simulation
 
 **The simulation has been released, and can be accessed by downloading it from**
+![Demo](Gif.gif)
 
 # https://masstortorogamer.itch.io/green-energy-simulation
 
